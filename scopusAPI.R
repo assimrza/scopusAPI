@@ -6,7 +6,7 @@ searchByString <- function(string, content = "complete", myStart = 0, retCount =
 	else {
 		##library(httr)
 		##library(XML)
-		key <- "yourAPIKey"
+		key <- "8e683a918e253bf4388aef00d5d0a22b"
 		print("Retrieving records.")
 		theURL <- httr::GET("https://api.elsevier.com/content/search/scopus", query = list(apiKey = key, query = string, sort = mySort, httpAccept = "application/xml", view = content, count = retCount, start = myStart, cursor = cursor)) ## format the URL to be sent to the API
 		httr::stop_for_status(theURL) ## pass any HTTP errors to the R console
@@ -49,7 +49,7 @@ searchByString <- function(string, content = "complete", myStart = 0, retCount =
 searchByID <- function(theIDs, idtype, datatype = "application/xml", content = "complete", myStart = 0, retCount = 25, outfile) {
 	##library(httr)
 	##library(XML)
-	key <- "yourAPIKey"
+	key <- "8e683a918e253bf4388aef00d5d0a22b"
 	if (length(theIDs) == 1) {
 		theIDs <- unique(scan(theIDs, what = "varchar")) ## load the list of IDs into a character vector
 	}
